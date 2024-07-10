@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coders Corner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="images/Logo.jpg" alt="Logo"></div>
+        <div class="lists">
+            <nav>
+                <ul>
+                    <li><b><a href="#home">Home</a></b></li>
+                    <li><b><a href="#why-coders-corner">Why Coders Corner</a></li>
+                    <li><b><a href="#courses">Courses</a></li>
+                    <li><b><a href="#tuition">Tuition</a></li>
+                    <li><b><a href="#success-stories">Success Stories</a></li>
+                    <li><b><a href="#contact-us">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="book-trial">
+            <button class="bb"><b><a href="#book_a_free_trial">Book A Free Trial</a></button>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="main_blue">
+            <h1>Nurturing Young Minds For Digital Tomorrow</h1>
+            <p>Your partner in finding the right talent.</p>
+        </section>
+        
+        <section id="why-coders-corner">
+            <h2>Why Coders Corner</h2>
+            <p>Are you ready to level up your programming skills? Look no further! Our online coding tutors are here to guide you on your journey. Whether you’re a beginner or an advanced coder, we’ve got you covered. With personalized learning, flexible scheduling, and vetted experts, you’ll master key languages like Python, JavaScript, and more. Boost your confidence and performance with our results-driven approach. Let’s transform your coding journey together! 🚀</p>
+        </section>
+        
+        <section id="courses">
+            <h2>Courses</h2>
+            <p>TBD</p>
+        </section>
+        
+        <section id="tuition">
+            <h2>Tuition</h2>
+            <p>TBD</p>
+        </section>
+        
+        <section id="success-stories">
+            <h2>Success Stories</h2>
+            <p>TBD</p>
+        </section>
+        
+        <section id="contact-us">
+            <h2>Contact Us</h2>
+            <p>TBD</p>
+        </section>
+        
+        <section id="book_a_free_trial">
+            <h2>Book A Free Trial</h2>
+            <p>TBD</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Coders Corner. All rights reserved.</p>
+    </footer>
+
+    <script>
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            // Calculate the height of the fixed header
+            const headerHeight = document.querySelector('header').offsetHeight;
+
+            // Calculate the offset position
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
